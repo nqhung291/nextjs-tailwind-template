@@ -5,10 +5,17 @@ module.exports = {
     "prettier",
     "plugin:tailwindcss/recommended",
   ],
-  plugin: ["tailwindcss"],
+  plugins: ["tailwindcss"],
+  rules: {
+    "@next/next/no-html-link-for-pages": "off",
+    "tailwindcss/no-custom-classname": "off",
+    "tailwindcss/classnames-order": "off",
+    "react/no-unescaped-entities": "off",
+  },
   settings: {
     tailwindcss: {
       callees: ["cn"],
+      config: "tailwind.config.js"
     },
     next: {
       rootDir: true,
