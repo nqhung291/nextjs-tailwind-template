@@ -4,6 +4,7 @@ module.exports = {
     "next/core-web-vitals",
     "prettier",
     "plugin:tailwindcss/recommended",
+    "plugin:@tanstack/eslint-plugin-query/recommended"
   ],
   plugins: ["tailwindcss"],
   rules: {
