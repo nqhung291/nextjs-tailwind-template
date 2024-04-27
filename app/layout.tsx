@@ -1,6 +1,6 @@
 import "@/styles/globals.css"
 
-import { inter } from "@/utils/fonts"
+import { inter } from "@/lib/fonts"
 
 export const metadata = {
   title: "Create Next App",
