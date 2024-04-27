@@ -1,6 +1,6 @@
 import "@/styles/globals.css"
 
-import { inter } from "@/lib/fonts"
+import { fontSans } from "@/lib/fonts"
 
 export const metadata = {
   title: "Create Next App",
@@ -17,7 +17,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={fontSans.className}>{children}</body>
     </html>
   )
 }

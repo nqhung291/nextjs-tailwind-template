@@ -4,8 +4,7 @@ import Link from "next/link"
 import { cn } from "@/lib/utils"
 import { Icons } from "@/components/icons"
 import { buttonVariants } from "@/components/ui/button"
-
-// import { UserAuthForm } from "@/components/user-auth-form"
+import { UserAuthForm } from "@/components/user-auth-form"
 
 export const metadata: Metadata = {
   title: "Login",
@@ -33,17 +32,17 @@ export default function LoginPage() {
           <h1 className="text-2xl font-semibold tracking-tight">
             Welcome back
           </h1>
-          <p className="text-muted-foreground text-sm">
+          <p className="text-sm text-muted-foreground">
             Enter your email to sign in to your account
           </p>
         </div>
-        {/* <UserAuthForm /> */}
-        <p className="text-muted-foreground px-8 text-center text-sm">
+        <UserAuthForm />
+        <p className="px-8 text-center text-sm text-muted-foreground">
           <Link
             href="/register"
             className="hover:text-brand underline underline-offset-4"
           >
-            Don&apos;t have an account? Sign Up
+            Don't have an account? Sign Up
           </Link>
         </p>
       </div>
