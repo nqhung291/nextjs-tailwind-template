@@ -88,9 +88,9 @@ export function UserAuthForm({ className, ...props }: UserAuthFormProps) {
               disabled={isLoading}
               {...register("password")}
             />
-            {errors?.email && (
+            {errors?.password && (
               <p className="px-1 text-xs text-red-600">
-                {errors.email.message}
+                {errors.password.message}
               </p>
             )}
           </div>
