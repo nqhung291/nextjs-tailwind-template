@@ -20,7 +20,7 @@ import type { PostLogin200, PostLogin401, PostLoginBody } from "./models"
  * Login
  * @summary Login
  */
-export const PostLogin = (
+export const postLogin = (
   postLoginBody: PostLoginBody,
   options?: AxiosRequestConfig
 ): Promise<AxiosResponse<PostLogin200>> => {
@@ -32,14 +32,14 @@ export const getPostLoginMutationOptions = <
   TContext = unknown,
 >(options?: {
   mutation?: UseMutationOptions<
-    Awaited<ReturnType<typeof PostLogin>>,
+    Awaited<ReturnType<typeof postLogin>>,
     TError,
     { data: PostLoginBody },
     TContext
   >
   axios?: AxiosRequestConfig
 }): UseMutationOptions<
-  Awaited<ReturnType<typeof PostLogin>>,
+  Awaited<ReturnType<typeof postLogin>>,
   TError,
   { data: PostLoginBody },
   TContext
@@ -47,19 +47,19 @@ export const getPostLoginMutationOptions = <
   const { mutation: mutationOptions, axios: axiosOptions } = options ?? {}
 
   const mutationFn: MutationFunction<
-    Awaited<ReturnType<typeof PostLogin>>,
+    Awaited<ReturnType<typeof postLogin>>,
     { data: PostLoginBody }
   > = (props) => {
     const { data } = props ?? {}
 
-    return PostLogin(data, axiosOptions)
+    return postLogin(data, axiosOptions)
   }
 
   return { mutationFn, ...mutationOptions }
 }
 
 export type PostLoginMutationResult = NonNullable<
-  Awaited<ReturnType<typeof PostLogin>>
+  Awaited<ReturnType<typeof postLogin>>
 >
 export type PostLoginMutationBody = PostLoginBody
 export type PostLoginMutationError = AxiosError<PostLogin401>
@@ -72,14 +72,14 @@ export const usePostLogin = <
   TContext = unknown,
 >(options?: {
   mutation?: UseMutationOptions<
-    Awaited<ReturnType<typeof PostLogin>>,
+    Awaited<ReturnType<typeof postLogin>>,
     TError,
     { data: PostLoginBody },
     TContext
   >
   axios?: AxiosRequestConfig
 }): UseMutationResult<
-  Awaited<ReturnType<typeof PostLogin>>,
+  Awaited<ReturnType<typeof postLogin>>,
   TError,
   { data: PostLoginBody },
   TContext

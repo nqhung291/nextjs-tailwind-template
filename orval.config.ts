@@ -10,17 +10,14 @@ export default defineConfig({
       prettier: true,
       override: {
         operationName: (operation, route, verb) => {
-          return [verb, route]
-            .filter((s) => !!s)
-            .map((s) => {
-              if (!s) return
-              return s
-                .split("/")
-                .filter((word) => !!word)
-                .map((word) => word[0].toUpperCase() + word.slice(1))
-                .join("")
-            })
-            .join("")
+          return (
+            verb +
+            route
+              .split("/")
+              .filter((word) => !!word)
+              .map((word) => word[0].toUpperCase() + word.slice(1))
+              .join("")
+          )
         },
       },
     },
